@@ -16,9 +16,9 @@ var gulp = require('gulp'),
     connect = require('gulp-connect');
 //js合并压缩
 gulp.task('js',['rev'],function(){
-   gulp.src(['js/jquery.2.0.3.js','js/data.js','js/ydui.js','js/index.js'])
+   gulp.src(['js/jquery-3.2.1.js','js/index.js'])
        .pipe(concat('app.js'))
-       .pipe(uglify())
+    //    .pipe(uglify())
        .pipe(rev())
         .pipe(gulp.dest('./build/js'))
         .pipe(connect.reload())
@@ -78,7 +78,7 @@ gulp.task('clean', function() {
 gulp.task('webserver', function() {
     connect.server({
       livereload: true,
-      port:'9090',
+      port:'8090',
       root:'build'
     });
 });
