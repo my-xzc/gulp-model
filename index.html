@@ -18,29 +18,190 @@
         
          <style>
                
-        </style>
-    </head>
+</style>
+<script>
+    // let myScroll,upNumber=0,downNumber=0;  
+    //   function loaded() {  
+    //     myScroll = new IScroll('#wrapper', {  
+    //         probeType: 1,//probeType：1对性能没有影响。在滚动事件被触发时，滚动轴是不是忙着做它的东西。probeType：2总执行滚动，除了势头，反弹过程中的事件。这类似于原生的onscroll事件。probeType：3发出的滚动事件与到的像素精度。注意，滚动被迫requestAnimationFrame（即：useTransition：假）。  
+    //         scrollbars: false,//有滚动条  
+    //         mouseWheel: true,//允许滑轮滚动  
+    //         fadeScrollbars: false,//滚动时显示滚动条，默认影藏，并且是淡出淡入效果  
+    //         bounce:true,//边界反弹  
+    //         interactiveScrollbars:true,//滚动条可以拖动  
+    //         shrinkScrollbars:'scale',// 当滚动边界之外的滚动条是由少量的收缩。'clip' or 'scale'.  
+    //         click: true ,// 允许点击事件  
+    //         keyBindings:true,//允许使用按键控制  
+    //         momentum:true// 允许有惯性滑动  
+    //     });  
+        //滚动时  
+    //     myScroll.on("scroll",function(){
+	// //scroll事件，可以用来控制上拉和下拉之后显示的模块中，
+    // //样式和内容展示的部分的改变。
+    //         var maxY = this.maxScrollY - this.y;
+    //             console.log(this.y)
+
+    //         if(this.y >= 60){
+    //             console.log('xia>=40')
+    //             return "";
+    //         }
+    //         }); 
+        // let len=$('.page').length;
+        // myScroll.on('scrollEnd',function(){
+        //     console.log('index'+$(this).parent().parent().index())
+            
+        //      var maxY = this.maxScrollY - this.y;
+        //         if(upNumber==2 || downNumber==2){
+        //             upNumber = 0;
+        //             downNumber = 0;
+        //         }
+        //     if(this.y == 0){
+        //         let index=$(this).parent().parent().index();
+        //         if(index>0){
+        //              $(this).parent().parent().addClass('slideOutDown').removeClass('slideInUp').prev()
+        //                         .animate({
+        //                          width:'94%',
+        //                          left:'3%'
+        //                  })
+        //         }
+        //         upNumber+=1;
+        //         return ;
+        //     }else if(maxY < 40 && maxY >=0){
+        //        let index=$(this).parent().index()+1;
+        //         // if(index < len-1){
+        //              $(this).parent().parent().next().removeClass('slideOutDown');
+        //                  $(this).parent().parent().removeClass('slideOutDown slideInUp').animate({
+        //                          width:'90%',
+        //                          left:'5%'
+        //                  }).next().show().addClass('slideInUp')
+        //         // }
+        //              if(index==1){
+        //                 $('.page').eq(0).animate({
+        //                          width:'86%',
+        //                          left:'7%'
+        //                  });
+        //          } 
+        //         downNumber+=1;
+        //         return ;
+        //     }
+        // }) 
+        
+        //  $("#wrapper").on("touchend", function(e) {
+        // 　　　　e.preventDefault();
+        //         let index=$(this).parent().index()+1;
+        //         if(index>0){
+        //              $(this).parent().addClass('slideOutDown').removeClass('slideInUp').prev()
+        //                         .animate({
+        //                          width:'94%',
+        //                          left:'3%'
+        //                  })
+        //         }
+                
+        //         if(index == len-1){
+        //                $('.page').eq(0).fadeIn(); 
+        //         }
+        // 　　　console.log(　$(this).parent().index())
+        // 　　});
+    //   document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false); 
+    // }
+</script>
+</head>
     <body>
         <div id="container">
-       
-            <section id="pageOne" class="page">
+            <section id="pageOne" class="page animated">
                 <div>
-                        第一页
+                    <img class="pagetitle" src="images/pageOneTitle.png" alt="华西证券">
+                    <img class="circle1" src="images/circle1.png" alt="华西证券">
+                    <img class="circle2" src="images/circle2.png" alt="华西证券">
+                    <img  class='mh' src="images/mh.png" alt="华西证券">
+                </div>
+                <div id="wrapper" class="content">
+                    <div id="scroller">
+                        <p>尊敬的华西证券广大客户：</p>  
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius deserunt maiores obcaecati dolor explicabo molestias fugit quidem. Mollitia sapiente amet, eveniet, illum totam provident molestias voluptatum natus, ipsum sed aut.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime temporibus, ad eligendi tempore mollitia, libero rerum molestias adipisci eaque. Ipsam quisquam placeat iusto ut, sunt dolor in? Ex ut, blanditiis?</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, possimus! Impedit incidunt in hic? Maiores omnis officiis delectus alias. Consequatur quod cum perferendis architecto consectetur fuga ea suscipit, neque ab.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis ullam ipsa, perspiciatis quae, eum molestiae illum magnam similique hic, exercitationem totam adipisci dolore, vel. Sit, illum ullam dolores vero iure. </p>
+                    </div>
                 </div>
            </section>
       
-            <section id="pageTwo" class="page">
-                    第二页
-                
+            <section id="pageTwo" class="page animated">
+                   <img class="pagetitle" src="images/pageTwoTitle.png" alt="华西证券">
+                   <img class="circle1" src="images/pageTwoCircle1.png" alt="华西证券">
+                   <img class="circle2" src="images/pageTwoCircle2.png" alt="华西证券">
+                     <div id="wrapper" class="content">
+                    <div id="scroller">
+                        <p>尊敬的华西证券广大客户：</p>  
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius deserunt maiores obcaecati dolor explicabo molestias fugit quidem. Mollitia sapiente amet, eveniet, illum totam provident molestias voluptatum natus, ipsum sed aut.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime temporibus, ad eligendi tempore mollitia, libero rerum molestias adipisci eaque. Ipsam quisquam placeat iusto ut, sunt dolor in? Ex ut, blanditiis?</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, possimus! Impedit incidunt in hic? Maiores omnis officiis delectus alias. Consequatur quod cum perferendis architecto consectetur fuga ea suscipit, neque ab.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis ullam ipsa, perspiciatis quae, eum molestiae illum magnam similique hic, exercitationem totam adipisci dolore, vel. Sit, illum ullam dolores vero iure. </p>
+                        <div id="next">
+
+                        </div>
+                    </div>
+                </div>
             </section>
 
-            <section id="pageThree" class="page" >
-                    第三页
+            <section id="pageThree" class="page animated" >
+                    <img class="pagetitle" src="images/pageThreeTitle.png" alt="华西证券">
+                    <img class="circle1" src="images/pageThreeCircle1.png" alt="华西证券">
+                    <img class="circle2" src="images/pageThreeCircle2.png" alt="华西证券">
+                    <div class="content">
+                            <div class="content-body">
+                                <img class="contentBg" src="images/contentBg.png" alt="">
+                                <div class="item">
+                                    <img class="fuli" src="images/fuli1.png" alt="">
+                                    <h2>赢财富增值产品限时特惠</h2>
+                                    <p>首席策略&nbsp;Hurst量化&nbsp;智能秘书&nbsp;主题选股</p>
+                                    <img class="fuli" src="images/fuli2.png" alt="">
+                                    <h2>购买产品笔笔抽大奖</h2>
+                                    <p>iphone7&nbsp;华为平板M3&nbsp;100元加油卡</p>
+                                </div>
+                                <img class="mark" src="images/mark.png" alt="">
+                            </div>
+                            <img class="footerTitle" src="images/footerTitle.png" alt="">
+                    </div>
             </section>
        </div> 
     </div>
+    <img class='footer' src="images/footer.png" alt="华西证券">
     </body>
 <script>
+    !function (window) {
 
+    /* 设计图文档宽度 */
+    var docWidth = 750;
+
+    var doc = window.document,
+        docEl = doc.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+
+    var recalc = (function refreshRem () {
+        var clientWidth = docEl.getBoundingClientRect().width;
+
+        /* 8.55：小于320px不再缩小，11.2：大于420px不再放大 */
+        docEl.style.fontSize = Math.max(Math.min(20 * (clientWidth / docWidth), 11.2), 8.55) * 5 + 'px';
+
+        return refreshRem;
+    })();
+
+    /* 添加倍屏标识，安卓为1 */
+    docEl.setAttribute('data-dpr', window.navigator.appVersion.match(/iphone/gi) ? window.devicePixelRatio : 1);
+
+    if (/iP(hone|od|ad)/.test(window.navigator.userAgent)) {
+        /* 添加IOS标识 */
+        doc.documentElement.classList.add('ios');
+        /* IOS8以上给html添加hairline样式，以便特殊处理 */
+        if (parseInt(window.navigator.appVersion.match(/OS (\d+)_(\d+)_?(\d+)?/)[1], 10) >= 8)
+            doc.documentElement.classList.add('hairline');
+    }
+
+    if (!doc.addEventListener) return;
+    window.addEventListener(resizeEvt, recalc, false);
+    doc.addEventListener('DOMContentLoaded', recalc, false);
+
+}(window);
 </script>
 </html>

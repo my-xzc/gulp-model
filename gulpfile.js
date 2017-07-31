@@ -16,7 +16,7 @@ var gulp = require('gulp'),
     connect = require('gulp-connect');
 //js合并压缩
 gulp.task('js',['rev'],function(){
-   gulp.src(['js/jquery-3.2.1.js','js/index.js'])
+   gulp.src(['js/jquery-3.2.1.js','js/iscroll.js','js/index.js'])
        .pipe(concat('app.js'))
     //    .pipe(uglify())
        .pipe(rev())
@@ -34,7 +34,7 @@ gulp.task('css',['rev'], function () {
         .pipe(concat('app.css'))  
         .pipe(less())      
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4')) 
-        .pipe(minifyCss()) 
+        // .pipe(minifyCss()) 
         .pipe(rev())  
         .pipe(gulp.dest('./build/css'))
         .pipe(rev.manifest()) 

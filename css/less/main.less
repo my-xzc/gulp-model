@@ -4,29 +4,158 @@
                         height: 100%;
                         background: #CAA78F;
                          overflow: hidden; 
+                         font-size:.25rem;
                          .page{
                         width:96%;
                         position: fixed; 
                         left:2%;
                 }
+                
+                .content{
+                        padding:0 .5rem;
+                            height: 74%;
+                        overflow: scroll;
+                        div{
+                                padding-bottom:2.8rem;
+                        }
+                        p{
+                                margin-bottom:.6rem;
+                                line-height: 1.5;
+                        }
+                }
                 #pageOne{
-                        background: green;
+                        
                         height:98%;
                         bottom: 0;
                         transform:scale(1);
+                        z-index:1;
+                        background:#fff url('../../images/bg.png') 0 6% no-repeat;
+                        background-size: contain;
+                        
+                        .circle1{
+                                position: absolute;
+                                right: -3%;
+                                top: 2.2rem;
+                                width: .8rem;
+                        }
+                        .circle2{
+                                position: absolute;
+                                left: -3%;
+                                top: .2rem;
+                                width: .6rem;
+                        }
+                        .mh{
+                                width: .55rem;
+                                display: block;
+                                margin: .2rem 0 .1rem .5rem;
+                        }
                 }
                 #pageTwo{
-                        background: yellow;
+                        
                         bottom:0;
-                        height:0;
+                        height:96.5%;
                         transform:scale(1);
+                        z-index:2;
+                        display:none;
+                        .circle1{
+                                position: absolute;
+                                right: -3%;
+                                top: 2.2rem;
+                                width: .8rem;
+                        }
+                        .circle2{
+                                position: absolute;
+                                left: -3%;
+                                top: .2rem;
+                                width: .6rem;
+                        }
                 }
                 #pageThree{
-                        background: red;
+                        
                         bottom:0;
-                        height:0;
+                        height:95%;
                         transform:scale(1);
-                }
+                        z-index:3;
+                        display:none;
+                        .circle1{
+                                width: .86rem;
+                                position: absolute;
+                                top: 2rem;
+                                left: -3%;
+                        }
+                        .circle2{
+                                width: .6rem;
+                                position: absolute;
+                                top: .2rem;
+                                right: -3%;
+                        }
+                        .content-body{
+                                position:relative;
+                                width: 90%;
+                                margin: 1rem auto;
+                                height: 5.5rem;
+                                // background: url(../../images/contentBg.png) 0 0 no-repeat;
+                                // background-size: contain;
+                                .fuli{
+                                        width: 2rem;
+                                }
+                                .contentBg{
+                                        width: 100%;
+                                        height: 100%;
+                                }
+                                .mark{
 
+                                        width: 1.4rem;
+                                        position: absolute;
+                                        right: -.4rem;
+                                        top: -.6rem;
+                                }
+                                h2{
+                                        margin-top:.1rem;
+                                        font-size:.31rem;
+                                        color:#fff;
+                                }
+                                p{
+                                        color:#DAD2D3;
+                                }
+                                .item{
+                                        position: absolute;
+                                        top: 0.6rem;
+                                        width: 100%;
+                                        text-align: center;
+                                }
+                        }
+                        .content{
+                                .footerTitle{
+                                        width: 80%;
+                                        margin-left: 10%;
+                                }
+                        }
                 }
+                .page{
+                        border-radius:.1rem;
+                        box-shadow: 0 0 10px -1px #111;
+                        background-color: #fff;
+                        .pagetitle{
+                                width:90%;
+                                margin: .4rem 5% 0;
+                        }
+                }
+                .footer{
+                        position: fixed;
+                        bottom:0;
+                        left:0;
+                        z-index:4;
+                        width: 100%;
+                        height:2.8rem;
+                }  
+
+
+}
+::-webkit-scrollbar  
+{  
+    width: 1px;  
+    height: 1px;  
+    background-color: transparent;  
+}       
                 
