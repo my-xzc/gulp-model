@@ -10,10 +10,10 @@
                         position: fixed; 
                         left:2%;
                 }
-                 #scrollerOne{
+                 #scrollerTwo{
                          position: relative;
                  }
-                #scrollerOne::after{
+                #scrollerTwo::after{
                         content:'';
                         display:inline-block;
                         height:100%;
@@ -23,6 +23,7 @@
                         left:24%;
                         top:2%;
                         z-index:-1;
+                        
                 }
                 
                 .content{
@@ -31,14 +32,9 @@
                         overflow: scroll;
                         -webkit-overflow-scrolling : touch;
                         div{
-                                padding-bottom:2.8rem;
+                                padding-bottom:2rem;
                         }
-                        p{
-                                // margin-bottom:.6rem;
-                                line-height: 1.5;
-                                margin: 0;
-                                
-                        }
+                        
                         .leftBox,.rightBox{
                                 display:inline-block;
                                 // position: absolute;
@@ -101,7 +97,16 @@
                                 text-align: right;
                         }
                         p{
-                                // text-indent: 2em;
+                                text-indent: 2em;
+                           
+                                margin-bottom:.3rem;
+                                line-height: 1.5;
+   
+                                
+                        
+                        }
+                        #scrollerOne{
+                                    padding-bottom: 2rem;
                         }
                 }
                 #pageTwo{
@@ -122,6 +127,9 @@
                                 left: -3%;
                                 top: .2rem;
                                 width: .6rem;
+                        }
+                        p{
+                                margin: 0!important;
                         }
                 }
                 #pageThree{
