@@ -1,74 +1,61 @@
 $(document).ready(function () { 
         // console.log( $('#scroller')[0].scrollHeight);
                  
-                              
-            function loaded() {  
-                     let   myScroll = new IScroll('#wrapper', {  
-                        scrollbars: false//有滚动条  
-                        });
-                              
-                }
-        loaded();
-        // next();
-                $('#scroller').on('touchend',function(){
-                                var nScrollHight = 0; //滚动距离总长(注意不是滚动条的长度)
-                                var nScrollTop = 0;   //滚动到的当前位置
-                                var nDivHight = $("#scroller").height();
-                                nScrollHight = $(this)[0].scrollHeight;
-                                nScrollTop = $('#wrapper')[0].offsetTop;
-                                console.log(nDivHight,nScrollTop,nScrollHight)
-                                if(nScrollTop + nDivHight >= nScrollHight){
-                                        alert("滚动条到底部了");
-                                }
-                                        
-                        alert('ok')
-                })
-              function next(){
-                        let windowHeight = $(window).height(),
+        var OneHight = $("#scrollerOne").height();  
+        var ScrollOneHight = $("#scrollerOne")[0].scrollHeight; //滚动距离总长(注意不是滚动条的长度)
+        var TwoHight = $("#scrollerTwo").height();  
+        var ScrollTwoHight = $("#scrollerTwo")[0].scrollHeight; //滚动距离总长(注意不是滚动条的长度)
+        var ThreeHight = $("#scrollerThree").height();  
+        var ScrollThreeHight = $("#scrollerThree")[0].scrollHeight; //滚动距离总长(注意不是滚动条的长度)
+        console.log(OneHight,ScrollOneHight,TwoHight,ScrollTwoHight,ThreeHight,ScrollThreeHight)
+        next();
+        function next(){
+                let windowHeight = $(window).height(),
                 　　$body = $("body");
-
                 　　$body.css("height", windowHeight); //重要代码
                 let len = $('.page').length;
-           $(".page").on("touchstart", function(e) {
-                　　　　e.preventDefault();
+           $(".content").on("touchstart", function(e) {
+                　　　　e.stopPropagation();
                 　　　　startX = e.originalEvent.changedTouches[0].pageX,
                 　　　　startY = e.originalEvent.changedTouches[0].pageY;
                 　　});
-        　　$(".page").on("touchmove", function(e) {
-        　　　　e.preventDefault();
-
+        　　$(".content").on("touchmove", function(e) {
+        　　　　e.stopPropagation();
         　　　　moveEndX = e.originalEvent.changedTouches[0].pageX,
         　　　　moveEndY = e.originalEvent.changedTouches[0].pageY,
         　　　　X = moveEndX - startX,
-        　　　　Y = moveEndY - startY;
-                
+                    Y = moveEndY - startY;
+            let index = $(this).parent().index();        
+            console.log($(this).index());
                 if ( Math.abs(Y) > Math.abs(X) && Y > 0) {
-                        console.log(Y)
-                        let index=  $(this).index();
-                        if( Y > 60 && index>0){
-                                $(this).addClass('slideOutDown').removeClass('slideInUp').prev()
+                        if ((Y>(ScrollOneHight-OneHight) &&Y>(ScrollTwoHight-TwoHight) &&Y>(ScrollThreeHight-ThreeHight))&& index>0){ 
+                                console.log(Y, '到上一页', $(this).parent().prev().css('width'), $(this));
+                                let widthP = $(this).parent().prev().css('width');
+                                        if(index == len-1){
+                                                $('.page').eq(0).fadeIn(); 
+                                }
+                                        
+                                        $(this).parent().addClass('slideOutDown').removeClass('slideInUp').prev()
                                         .animate({
-                                        width:'94%',
-                                        left:'3%'
+                                        "width":( widthP*1.3)+"px",
+                                        // left:'3%'
                                 })
-                        }
-                        if(index == len-1){
-                        $('.page').eq(0).fadeIn(); 
-                        }
-        　　　　}
+                        }    
+                }
+                  
         　　　　else if ( Math.abs(Y) > Math.abs(X) && Y < 0 ) {
-                        let index=  $(this).index();
-                        console.log
-                        if( Y < -60 && index < len-1){
-                                $(this).next().removeClass('slideOutDown');
-                                $(this).removeClass('slideOutDown slideInUp').animate({
-                                        width:'90%',
-                                        left:'5%'
-                                }).next().show().addClass('slideInUp')
-                        }  
-                        if(index==1){
+                        if ((Y<(OneHight-ScrollOneHight) && Y<(TwoHight-ScrollTwoHight) && Y<(ThreeHight-ScrollThreeHight)) && index < len-1){ 
+                                console.log(Y, '到下一页',$(this).parent().next().css('width'),$(this));
+                                let widthN = $(this).parent().next().css('width');
+                                $(this).parent().next().removeClass('slideOutDown');
+                                $(this).parent().removeClass('slideOutDown slideInUp').animate({
+                                        width: (widthN*.6)+"px",
+                                        // left: width-5%
+                                }).next().show().addClass('slideInUp');
+                                if(index==1){
                                 $('.page').eq(0).fadeOut();
-                        }   
+                                } 
+                        }       
         　　　　}
         　　});
               }

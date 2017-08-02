@@ -13,11 +13,13 @@ var gulp = require('gulp'),
     plumber = require('gulp-plumber'),
     clean = require('gulp-clean'),
     gulpif = require('gulp-if'),
-    connect = require('gulp-connect');
+    connect = require('gulp-connect'),
+    stripdebug= require('gulp-strip-debug');
 //js合并压缩
 gulp.task('js',['rev'],function(){
-   gulp.src(['js/jquery-3.2.1.js','js/iscroll.js','js/index.js'])
+   gulp.src(['js/jquery-3.2.1.js','','js/index.js'])
        .pipe(concat('app.js'))
+    //    .pipe(stripdebug())
     //    .pipe(uglify())
        .pipe(rev())
         .pipe(gulp.dest('./build/js'))
